@@ -177,7 +177,7 @@
             <div class="bank-card"><p>People's: 120200380030196</p><button class="copy-btn" onclick="copyText('120200380030196')">COPY</button></div>
             <div class="bank-card"><p>LOLC: 01210012722</p><button class="copy-btn" onclick="copyText('01210012722')">COPY</button></div>
             <div class="bank-card"><p>DFCC: 1210012758 (Baduraliya)</p><button class="copy-btn" onclick="copyText('1210012758')">COPY</button></div>
-            <div class="bank-card"><p>Sampath: 105456146706 (Neluwa)</p><button class="copy-btn" onclick="copyText('105456146706')">COPY</button></div>
+            <div class="bank-card"><p>Sampath: 105456146706 (Oshadhi)</p><button class="copy-btn" onclick="copyText('105456146706')">COPY</button></div>
         </div>
     </div>
 
@@ -217,7 +217,7 @@
         function openModal(id) { document.getElementById(id).style.display = "flex"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
         
-        // පණිවිඩයක් නැතිව copy වන ලෙස සකස් කළ code එක
+        // පණිවිඩයක් (Alert) නොපෙන්වා Copy වන ලෙස සකස් කළ code එක
         function copyText(text) { 
             navigator.clipboard.writeText(text); 
         }
@@ -263,9 +263,9 @@
             }
         }
 
-        // විනාඩි 1කට වරක් update වීම (300,000 ms)
+        // විනාඩි 5කට වරක් update වීම (300,000 ms)
         setInterval(generateTransactions, 300000);
-        generateTransactions(); // මුලින්ම පෙන්වීමට
+        generateTransactions(); // මුලින්ම දත්ත පෙන්වීමට
     </script>
 </body>
-                </html>
+                    </html>
