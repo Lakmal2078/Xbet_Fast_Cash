@@ -7,11 +7,11 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f0f2f5; color: #333; text-align: center; padding-bottom: 20px; }
-
+        
         header { background: #0d47a1; color: white; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         h1 { font-size: 1.1rem; line-height: 1.3; }
         .status { background: #1976d2; border: 1px solid white; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
-
+        
         .news-ticker { background: #0a2149; color: #bbdefb; padding: 8px; font-size: 0.85rem; white-space: nowrap; overflow: hidden; }
         .ticker-content { display: inline-block; padding-left: 100%; animation: ticker 20s linear infinite; font-weight: bold; }
 
@@ -35,6 +35,7 @@
         .card-btn { background: white; padding: 18px; margin: 10px auto; border-radius: 15px; width: 95%; max-width: 400px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); cursor: pointer; border-bottom: 3px solid #1565c0; transition: 0.2s; }
         .card-btn h3 { color: #0d47a1; font-size: 1.1rem; margin-bottom: 4px; }
 
+        /* LIVE TRANSACTIONS TABLE */
         .live-section { background: white; margin: 15px auto; width: 95%; max-width: 500px; border-radius: 12px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .live-section h3 { font-size: 1rem; color:#0d47a1; margin-bottom:10px; }
         table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
@@ -45,16 +46,15 @@
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; }
         .modal-content { background: white; width: 92%; max-width: 420px; padding: 25px; border-radius: 15px; text-align: left; position: relative; max-height: 90vh; overflow-y: auto; }
         .close-btn { position: absolute; top: 10px; right: 15px; font-size: 1.8rem; color: #333; cursor: pointer; }
-
+        
         .input-group { margin-bottom: 15px; }
         .input-field { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
         .submit-btn { width: 100%; background: #1565c0; color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; }
-
+        
         .location-info { background: #e3f2fd; padding: 10px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #0d47a1; font-size: 0.85rem; }
         .note-text { color: #d32f2f; font-size: 0.75rem; font-weight: bold; margin-top: 10px; text-align: center; display: block; }
 
         .bank-card { background: #f1f7ff; padding: 12px; margin: 10px 0; border-left: 4px solid #1565c0; border-radius: 6px; }
-        .acc-row { display: flex; justify-content: space-between; align-items: center; }
         .copy-btn { background: #0d47a1; color: white; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; font-weight: bold; }
 
         .contact-item { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #eee; text-decoration: none; color: #333; }
@@ -109,13 +109,8 @@
             <thead>
                 <tr><th>Time</th><th>Player ID</th><th>Amount</th><th>Status</th></tr>
             </thead>
-            <tbody>
-                <tr><td>Just Now</td><td>108***18</td><td>Rs. 1,000</td><td><span class="status-done">Success</span></td></tr>
-                <tr><td>15 min ago</td><td>144***14</td><td>Rs. 9,700</td><td><span class="status-done">Success</span></td></tr>
-                <tr><td>30 min ago</td><td>142***55</td><td>Rs. 14,000</td><td><span class="status-done">Success</span></td></tr>
-                <tr><td>40 min ago</td><td>110***19</td><td>Rs. 1,500</td><td><span class="status-done">Success</span></td></tr>
-                <tr><td>1 hour ago</td><td>122***43</td><td>Rs. 1,000</td><td><span class="status-done">Success</span></td></tr>
-            </tbody>
+            <tbody id="transaction-body">
+                </tbody>
         </table>
     </section>
 
@@ -182,8 +177,8 @@
         var phoneNumber = "94776763093";
         function openModal(id) { document.getElementById(id).style.display = "flex"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
-
-        // Alert එක ඉවත් කර සකස් කළ copy code එක
+        
+        // NO ALERT COPY CODE
         function copyText(text) { 
             navigator.clipboard.writeText(text); 
         }
@@ -205,6 +200,34 @@
         }
 
         window.onclick = function(event) { if (event.target.className === "modal-overlay") { closeModal(event.target.id); } }
+
+        // AUTO-UPDATE TRANSACTIONS EVERY 5 MINUTES
+        const playerBases = ["108", "144", "142", "110", "122", "156", "178"];
+        const amountBases = [1000, 1500, 2000, 5000, 8500, 10000, 14000, 25000];
+
+        function generateTransactions() {
+            const tbody = document.getElementById("transaction-body");
+            tbody.innerHTML = ""; // Clear old data
+
+            for (let i = 0; i < 5; i++) {
+                let timeText = i === 0 ? "Just Now" : (i * 5) + " min ago";
+                let randomID = playerBases[Math.floor(Math.random() * playerBases.length)] + "***" + Math.floor(10 + Math.random() * 89);
+                let randomAmt = "Rs. " + amountBases[Math.floor(Math.random() * amountBases.length)].toLocaleString();
+                
+                let row = `<tr>
+                    <td>${timeText}</td>
+                    <td>${randomID}</td>
+                    <td>${randomAmt}</td>
+                    <td><span class="status-done">Success</span></td>
+                </tr>`;
+                tbody.innerHTML += row;
+            }
+        }
+
+        // Run every 5 minutes (300,000 milliseconds)
+        setInterval(generateTransactions, 300000);
+        // Initial run
+        generateTransactions();
     </script>
 </body>
 </html>
