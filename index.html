@@ -3,269 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xbet Fast Cash Official Sri Lanka</title>
+    <title>Xbet Fast Cash - Secure Gateway</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f0f2f5; color: #333; text-align: center; padding-bottom: 20px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;700&display=swap');
         
-        header { background: #0d47a1; color: white; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        h1 { font-size: 1.1rem; line-height: 1.3; }
-        .status { background: #1976d2; border: 1px solid white; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
-        
-        .news-ticker { background: #0a2149; color: #bbdefb; padding: 8px; font-size: 0.85rem; white-space: nowrap; overflow: hidden; }
-        .ticker-content { display: inline-block; padding-left: 100%; animation: ticker 20s linear infinite; font-weight: bold; }
-
-        .promo-card { 
-            background: linear-gradient(135deg, #1e88e5, #0d47a1); 
-            color: white; padding: 12px; margin: 10px auto; border-radius: 12px; 
-            width: 95%; max-width: 400px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .promo-code { 
-            background: white; color: #0d47a1; padding: 4px 12px; 
-            border-radius: 5px; font-size: 1.2rem; font-weight: bold; 
-            display: inline-block; border: 1px dashed #0d47a1;
-        }
-        .register-btn { 
-            display: inline-block; background: #ffca28; color: #333; 
-            padding: 8px 18px; border-radius: 50px; text-decoration: none; 
-            font-weight: bold; font-size: 0.85rem; margin-top: 8px;
+        body { 
+            font-family: 'Inter', 'Noto Sans Sinhala', sans-serif; 
+            background-color: #020617; /* Slate 950 */
         }
 
-        .services { padding: 5px; }
-        .card-btn { background: white; padding: 18px; margin: 10px auto; border-radius: 15px; width: 95%; max-width: 400px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); cursor: pointer; border-bottom: 3px solid #1565c0; transition: 0.2s; }
-        .card-btn h3 { color: #0d47a1; font-size: 1.1rem; margin-bottom: 4px; }
-
-        /* LIVE TRANSACTIONS TABLE */
-        .live-section { background: white; margin: 15px auto; width: 95%; max-width: 500px; border-radius: 12px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .live-section h3 { font-size: 1rem; color:#0d47a1; margin-bottom:10px; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-        th { background: #e3f2fd; padding: 10px; color: #0d47a1; border-bottom: 2px solid #1976d2; }
-        td { padding: 10px; border-bottom: 1px solid #eee; }
-        .status-done { background: #1e88e5; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
-
-        /* REVIEWS SECTION STYLE */
-        .reviews-section { background: white; margin: 15px auto; width: 95%; max-width: 500px; border-radius: 12px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .reviews-section h3 { font-size: 1rem; color:#0d47a1; margin-bottom:15px; }
-        .review-card { border-bottom: 1px solid #eee; padding: 10px 0; text-align: left; display: flex; align-items: flex-start; }
-        .review-card:last-child { border-bottom: none; }
-        .user-img { width: 40px; height: 40px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #0d47a1; margin-right: 12px; font-size: 1rem; flex-shrink: 0; }
-        .review-content { flex: 1; }
-        .review-name { font-weight: bold; font-size: 0.85rem; color: #333; }
-        .stars { color: #ffca28; font-size: 0.75rem; margin: 2px 0; }
-        .review-text { font-size: 0.8rem; color: #666; line-height: 1.4; }
-
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; }
-        .modal-content { background: white; width: 92%; max-width: 420px; padding: 25px; border-radius: 15px; text-align: left; position: relative; max-height: 90vh; overflow-y: auto; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 1.8rem; color: #333; cursor: pointer; }
+        /* Ambient Background Animation */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15), transparent 60%),
+                        radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.1), transparent 50%);
+        }
         
-        .input-group { margin-bottom: 15px; }
-        .input-field { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
-        .submit-btn { width: 100%; background: #1565c0; color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 300px; height: 300px; background: rgba(37, 99, 235, 0.2); animation-delay: 0s; }
+        .blob-2 { bottom: -10%; right: -10%; width: 250px; height: 250px; background: rgba(126, 34, 206, 0.2); animation-delay: 5s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, 40px) scale(1.1); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
         
-        .location-info { background: #e3f2fd; padding: 10px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #0d47a1; font-size: 0.85rem; }
-        .note-text { color: #d32f2f; font-size: 0.75rem; font-weight: bold; margin-top: 10px; text-align: center; display: block; }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.2s;
+        }
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(59, 130, 246, 0.5);
+            outline: none;
+        }
 
-        .bank-card { background: #f1f7ff; padding: 12px; margin: 10px 0; border-left: 4px solid #1565c0; border-radius: 6px; }
-        .copy-btn { background: #0d47a1; color: white; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; font-weight: bold; }
+        /* Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 4px; }
 
-        .contact-item { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #eee; text-decoration: none; color: #333; }
-        .contact-text { font-size: 0.9rem; margin-left: 10px; }
+        /* Modal Transitions */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            transform: scale(0.95) translateY(10px);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
 
-        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        /* Feed Animation */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .feed-item {
+            animation: slideIn 0.4s ease-out forwards;
+        }
+
+        /* Chat Animations */
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        
+        /* Markdown Styles within Chat */
+        .prose p { margin-bottom: 0.5em; }
+        .prose ul { list-style-type: disc; padding-left: 1.2em; margin-bottom: 0.5em; }
+        .prose strong { color: #93c5fd; font-weight: 700; }
     </style>
 </head>
-<body>
+<body class="text-white min-h-screen pb-24 relative overflow-x-hidden selection:bg-blue-500/30">
 
-    <header>
-        <h1>Xbet Fast Cash Official Sri Lanka<br>Deposit/Withdrawal</h1>
-        <span class="status">● ONLINE SERVICE</span>
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="pt-8 pb-6 px-4 text-center">
+        <div class="glass-panel rounded-3xl p-6 mx-auto max-w-xs relative overflow-hidden group hover:border-blue-500/30 transition-colors duration-500">
+            <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 to-transparent pointer-events-none"></div>
+            
+            <h1 class="text-2xl font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white mb-2 drop-shadow-sm relative z-10">
+                Xbet Fast Cash
+            </h1>
+            <div class="relative z-10 inline-flex items-center px-3 py-1 rounded-full bg-slate-950/40 border border-green-500/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2 animate-[pulse_2s_infinite]"></span>
+                <span class="text-[10px] font-bold text-green-400 tracking-wide">SYSTEM ONLINE</span>
+            </div>
+        </div>
     </header>
 
-    <div class="news-ticker">
-        <div class="ticker-content">📢 Promo Code: VGSL | 🕒 24/7 Fast Deposit & Withdrawals | 🏆 Trusted Agent Since 2016</div>
-    </div>
-
-    <section class="promo-section">
-        <div class="promo-card">
-            <h2 style="font-size: 0.9rem;">🎁 200% BONUS PROMO CODE</h2>
-            <div class="promo-code">VGSL</div>
-            <button onclick="copyText('VGSL')" style="background:none; border:none; color:#bbdefb; font-size:0.75rem; cursor:pointer; text-decoration:underline; margin-left:10px;">Copy</button>
-            <br>
-            <a href="http://bit.ly/48VYQ2j" target="_blank" class="register-btn">REGISTER NOW ➤</a>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="card-btn" onclick="openModal('depositModal')">
-            <h3>🏦 BANK DETAILS</h3>
-            <p>මුදල් දැමිය යුතු ගිණුම් අංක</p>
-        </div>
-        <div class="card-btn" onclick="openModal('depositRequestModal')" style="border-bottom: 3px solid #1e88e5;">
-            <h3>💰 DEPOSIT REQUEST</h3>
-            <p>රිසිට් පත සහ ID එක එවන්න</p>
-        </div>
-        <div class="card-btn" onclick="openModal('withdrawModal')">
-            <h3>🏧 WITHDRAWAL</h3>
-            <p>මුදල් ආපසු ලබා ගැනීමට</p>
-        </div>
-        <div class="card-btn" onclick="openModal('contactModal')" style="background-color: #e3f2fd;">
-            <h3>📞 CONTACT US</h3>
-            <p>අපව සම්බන්ධ කර ගැනීමට</p>
-        </div>
-    </section>
-
-    <section class="live-section">
-        <h3>⚡ Recent Completed Transactions</h3>
-        <table>
-            <thead>
-                <tr><th>Time</th><th>Player ID</th><th>Amount</th><th>Status</th></tr>
-            </thead>
-            <tbody id="transaction-body">
-                </tbody>
-        </table>
-    </section>
-
-    <section class="reviews-section">
-        <h3>⭐ Customer Reviews</h3>
-        <div class="review-card">
-            <div class="user-img">A</div>
-            <div class="review-content">
-                <p class="review-name">Amila Perera</p>
-                <p class="stars">⭐⭐⭐⭐⭐</p>
-                <p class="review-text">ඉතාමත් ඉක්මනින් Deposit එක ලැබුණා. අවුරුදු ගාණක ඉඳන් මේ Agent ව විශ්වාස කරනවා. ස්තූතියි!</p>
-            </div>
-        </div>
-        <div class="review-card">
-            <div class="user-img">N</div>
-            <div class="review-content">
-                <p class="review-name">Nimesh Silva</p>
-                <p class="stars">⭐⭐⭐⭐⭐</p>
-                <p class="review-text">Fast withdrawal and 24/7 service. Highly recommended for Sri Lankan players.</p>
-            </div>
-        </div>
-        <div class="review-card">
-            <div class="user-img">S</div>
-            <div class="review-content">
-                <p class="review-name">Sahan 1X</p>
-                <p class="stars">⭐⭐⭐⭐⭐</p>
-                <p class="review-text">පැය 24 පුරාම සේවාව තියෙන එක ලොකු උදව්වක්. විශ්වාසවන්ත සේවාවක්.</p>
-            </div>
-        </div>
-    </section>
-
-    <div id="contactModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
-            <h2 style="color: #0d47a1; font-size:1.2rem; margin-bottom:15px; text-align: center;">Contact Information</h2>
-            <a href="https://wa.me/94776763093" class="contact-item" target="_blank">💬 <span class="contact-text">WhatsApp: 0776763093</span></a>
-            <a href="tel:0112968542" class="contact-item">📞 <span class="contact-text">Phone: 0112968542</span></a>
-            <a href="mailto:b2b1xretaillteam@gmail.com" class="contact-item">✉️ <span class="contact-text">b2b1xretaillteam@gmail.com</span></a>
-            <a href="https://www.facebook.com/share/1BBS31FtXv/" class="contact-item" target="_blank">🔵 <span class="contact-text">Facebook Official Page</span></a>
-        </div>
-    </div>
-
-    <div id="depositModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('depositModal')">&times;</span>
-            <h2 style="color: #0d47a1; text-align: center; margin-bottom: 10px; font-size: 1.2rem;">Bank Accounts</h2>
-            <p style="text-align:center; font-weight:bold; color:#d32f2f; font-size:0.9rem; margin-bottom:10px;">Name: VGS Lakmal</p>
-            <div class="bank-card" style="background:#fffde7; border-left-color:#fbc02d;">
-                <p>⭐ iPay (LOLC): <b>0740452530</b></p>
-                <button class="copy-btn" onclick="copyText('0740452530')" style="margin-top:5px;">COPY</button>
-            </div>
-            <div class="bank-card"><p>BOC: 95645895 (Walasmulla)</p><button class="copy-btn" onclick="copyText('95645895')">COPY</button></div>
-            <div class="bank-card"><p>People's: 120200380030196</p><button class="copy-btn" onclick="copyText('120200380030196')">COPY</button></div>
-            <div class="bank-card"><p>LOLC: 01210012722</p><button class="copy-btn" onclick="copyText('01210012722')">COPY</button></div>
-            <div class="bank-card"><p>DFCC: 1210012758 (Baduraliya)</p><button class="copy-btn" onclick="copyText('1210012758')">COPY</button></div>
-            <div class="bank-card"><p>Sampath: 105456146706 (Oshadhi)</p><button class="copy-btn" onclick="copyText('105456146706')">COPY</button></div>
-        </div>
-    </div>
-
-    <div id="withdrawModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('withdrawModal')">&times;</span>
-            <h2 style="color: #0d47a1; font-size:1.2rem; margin-bottom:15px;">Withdrawal Request</h2>
-            <div class="location-info">
-                <p>📍 <b>City:</b> Walasmulla</p>
-                <p>🛣️ <b>Street:</b> Beliatta Road | 🕒 <b>24/7</b></p>
-            </div>
-            <div class="input-group">
-                <input type="number" id="withID" class="input-field" placeholder="Player ID">
-                <input type="text" id="withSec" class="input-field" placeholder="Security Code (****)">
-            </div>
-            <button class="submit-btn" onclick="sendWithdrawToWhatsApp()">Send on WhatsApp ➤</button>
-            <span class="note-text">*WhatsApp පණිවිඩය සමඟ ඔබේ බැංකු විස්තර (Bank Details) එකටම එවන්න.</span>
-        </div>
-    </div>
-
-    <div id="depositRequestModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('depositRequestModal')">&times;</span>
-            <h2 style="color: #0d47a1; font-size:1.2rem; margin-bottom:15px; text-align:center;">Deposit Request</h2>
-            <div class="input-group">
-                <input type="number" id="depID" class="input-field" placeholder="Player ID">
-                <input type="number" id="depAmount" class="input-field" placeholder="Amount (Rs.)">
-                <input type="file" id="receiptFile" class="input-field" accept="image/*" style="margin-top:10px;">
-            </div>
-            <button class="submit-btn" onclick="sendDepositToWhatsApp()">Send on WhatsApp ➤</button>
-            <span class="note-text">*WhatsApp විවෘත වූ පසු Screenshot එක අමුණා එවන්න.</span>
-        </div>
-    </div>
-
-    <script>
-        var phoneNumber = "94776763093";
-        function openModal(id) { document.getElementById(id).style.display = "flex"; document.body.style.overflow = "hidden"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
+    <main class="max-w-md mx-auto px-4 space-y-5">
         
-        // පණිවිඩයක් (Alert) නොපෙන්වා Copy වන ලෙස සකස් කළ code එක
-        function copyText(text) { 
-            navigator.clipboard.writeText(text); 
-        }
+        <div class="glass-panel rounded-2xl p-0.5 bg-gradient-to-br from-blue-500/20 via-transparent to-purple-500/20">
+            <div class="bg-slate-950/40 backdrop-blur-xl rounded-2xl p-5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mr-10 -mt-10 w-32 h-32 bg-white/5 blur-2xl rounded-full pointer-events-none"></div>
 
-        function sendDepositToWhatsApp() {
-            var id = document.getElementById("depID").value;
-            var amt = document.getElementById("depAmount").value;
-            if(!id || !amt) { alert("Fill all details!"); return; }
-            var msg = "🔵 *DEPOSIT REQUEST* 🔵\nID: " + id + "\nAmount: Rs. " + amt + "\n(I will send the receipt now)";
-            window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(msg), '_blank');
-        }
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div>
+                        <h3 class="text-lg font-bold text-white leading-tight">Join & Win Big!</h3>
+                        <p class="text-xs text-blue-200/70 mt-1">Exclusive sign-up bonus active</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 p-2 rounded-lg text-yellow-400 border border-yellow-400/20 shadow-lg shadow-yellow-400/10">
+                        <i data-lucide="crown" class="w-5 h-5"></i>
+                    </div>
+                </div>
 
-        function sendWithdrawToWhatsApp() {
-            var id = document.getElementById("withID").value;
-            var sec = document.getElementById("withSec").value;
-            if(!id) { alert("Enter ID!"); return; }
-            var msg = "🔴 *WITHDRAW REQUEST* 🔴\nID: " + id + "\nSecurity: " + sec + "\n(මම මගේ බැංකු විස්තර දැන් එවන්නම්)";
-            window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(msg), '_blank');
-        }
+                <div class="bg-slate-950/60 border border-white/5 rounded-xl p-3 flex justify-between items-center mb-4">
+                    <div>
+                        <p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold">Promo Code</p>
+                        <p class="text-xl font-mono font-bold text-yellow-400 tracking-widest" id="promo-code">VGSL</p>
+                    </div>
+                    <button onclick="copyText('VGSL')" class="bg-white/5 hover:bg-white/10 active:bg-white/20 text-white p-2.5 rounded-lg transition-all border border-white/5">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
 
-        window.onclick = function(event) { if (event.target.className === "modal-overlay") { closeModal(event.target.id); } }
+                <a href="https://refpa58144.com/L?tag=d_3634819m_1236c_Facebook_Group1&site=3634819&ad=1236" target="_blank" class="group relative block w-full overflow-hidden rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 p-[1px] shadow-lg shadow-green-900/20 active:scale-[0.98] transition-transform">
+                    <div class="relative flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-3 font-bold text-white transition-all group-hover:bg-opacity-90">
+                        <span>Register New Account</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-        // AUTO-UPDATE TRANSACTIONS EVERY 5 MINUTES
-        const playerBases = ["108", "144", "142", "110", "122", "156", "178", "199", "134"];
-        const amountBases = [1000, 1500, 2000, 5000, 8500, 10000, 14000, 25000, 50000];
+        <div class="grid grid-cols-2 gap-3">
+            <button onclick="openModal('modal-bank')" class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition-all h-28 active:scale-95 group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="p-3 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="landmark" class="w-5 h-5"></i>
+                </div>
+                <span class="font-semibold text-xs tracking-wide text-white/90">Bank Details</span>
+            </button>
 
-        function generateTransactions() {
-            const tbody = document.getElementById("transaction-body");
-            tbody.innerHTML = ""; 
+            <button onclick="openModal('modal-withdraw')" class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition-all h-28 active:scale-95 group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="p-3 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="credit-card" class="w-5 h-5"></i>
+                </div>
+                <span class="font-semibold text-xs tracking-wide text-white/90">Withdrawal</span>
+            </button>
 
-            for (let i = 0; i < 5; i++) {
-                let timeText = i === 0 ? "Just Now" : (i * 5) + " min ago";
-                let randomID = playerBases[Math.floor(Math.random() * playerBases.length)] + "***" + Math.floor(10 + Math.random() * 89);
-                let randomAmt = "Rs. " + amountBases[Math.floor(Math.random() * amountBases.length)].toLocaleString();
-                
-                let row = `<tr>
-                    <td>${timeText}</td>
-                    <td>${randomID}</td>
-                    <td>${randomAmt}</td>
-                    <td><span class="status-done">Success</span></td>
-                </tr>`;
-                tbody.innerHTML += row;
-            }
-        }
+            <button onclick="openModal('modal-deposit')" class="glass-panel p-4 rounded-xl col-span-2 relative overflow-hidden group hover:border-blue-500/40 transition-all h-20 active:scale-[0.98]">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-blue-900/10 to-transparent"></div>
+                <div class="relative z-10 flex items-center justify-center gap-4">
+                    <div class="p-2.5 bg-blue-600 rounded-full text-white shadow-lg shadow-blue-600/20 group-hover:rotate-12 transition-transform duration-300">
+                        <i data-lucide="banknote" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block font-bold text-lg leading-tight">Submit Deposit</span>
+                        <span class="text-[10px] text-blue-200/60 uppercase tracking-wide">Fast Processing</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-white/20 absolute right-4 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </button>
 
-        // විනාඩි 5කට වරක් update වීම (300,000 ms)
-        setInterval(generateTransactions, 300000);
-        generateTransactions(); // මුලින්ම දත්ත පෙන්වීමට
-    </script>
-</body>
-                    </html>
+            <button onclick="openModal('modal-ai')" class="glass-panel p-4 rounded-xl flex items-center justify-center gap-3 hover:bg-white/5 transition-colors h-14 active:scale-[0.98] border-indigo-500/30 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-50"></div>
+                <i data-lucide="sparkles" class="w-4 h-4 text-yellow-300 animate-pulse"></i>
+                <span class="font-bold text-sm text-indigo-200">AI Assistant</span>
+            </button>
+
+            <button onclick="openModal('modal-contact')" class="glass-panel p-4 rounded-xl flex items-center justify-center gap-3 hover:bg-white/5 transition-colors h-14 active:scale-[0.98]">
+                <i data-lucide="headset" class="w-4 h-4 text-green-400"></i>
+                <span class="font-semibold text-sm text-white/80">Support</span>
+            </button>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-5 border-t border-white/5">
+            <div class="flex items-center gap-2.5 mb-5 pb-3 border-b border-dashed border-white/10">
+                <div class="w-2 h-2 rounded-full bg-red-500 animate-ping"></div>
+                <h3 class="font-bold text-white/90 text-xs tracking-widest uppercase">Live Transactions</h3>
+                <span class="ml-auto text-[10px] bg-white/5 px-2 py-0.5 rounded text-white/40" id="online-count">142 Online</span>
+            </div>
+            
+            <div class="space-y-3 h-[200px] overflow-hidden relative">
+                <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#020617] to-transparent z-10 pointer-events-none"></div>
+                <div id="activity-list" class="space-y-3">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <a href="https://wa.me/94776763093" class="fixed bottom-6 right-6 group z-50">
+        <span class="absolute right-0 bottom-full mb-2 w-max px-2 py-1 bg-white text-slate-900 text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">Chat Now</span>
+        <div class="w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/20 hover:scale-110 active:scale-90 transition-transform duration-300">
+            <i data-lucide="message-circle" class="w-7 h-7 text-white fill-current"></i>
+        </div>
+    </a>
+
+    <div id="toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 -translate-y-20 opacity-0 pointer-events-none z-[100] transition-all duration-300">
+        <div class="glass-panel bg-[#0f172a]/90 backdrop-blur-md border-l-4 px-6 py-3.5 rounded-r-xl shadow-2xl flex items-center gap-3 min-w-[200px]">
+            <div id="toast-icon"></div>
+            <div>
+                <h4 id="toast-title" class="font-bold text-sm">notification</h4>
+                <p id="toast-msg" class="text-xs text-white/60">message content</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ai" class="modal fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4">
+        <div class="modal-content glass-panel bg-[#0f172a] border-indigo-500/30 w-full max-w-sm rounded-t-3xl sm:rounded-3xl h-[85vh] sm:h-[600px] flex flex-col shadow-2xl overflow-hidden relative">
+            
+            <div class="p-4 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 border-b border-white/5 flex justify-between items-center z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-indigo-300"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-bold text-white">AI Assistant</h2>
+                        <p class="text-[10px] text-indigo-200/60">Powered by Gemini ✨</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-ai')" class="p-2 text-white/40 hover:text-white transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+
+            <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-[#020617]/50">
+                <div class="flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded-full bg-indigo-500/20 flex-shrink-0 flex items-center justify-center mt-1">
+                        <i data-lucide="bot" class="w-3 h-3 text-indigo-300"></i>
+                    </div>
+                    <div class="bg-white/5 border border-white/5 rounded-2xl rounded-tl-none p-3 max-w-[85%]">
+                        <p class="text-sm text-white/90">Hello! Ayubowan! I can help with deposits, withdrawals, or betting terms. How can I help? ✨</p>
+                        <div class="flex gap-2 mt-2 flex-wrap">
+                            <button onclick="sendPreset('Salli danne kohomada?')" class="text-[10px] bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 px-2 py-1 rounded-full border border-indigo-500/20 transition-colors">Salli danne kohomada?</button>
+                            <button onclick="sendPreset('How do I deposit?')" class="text-[10px] bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 px-2 py-1 rounded-full border border-indigo-500/20 transition-colors">How do I deposit?</button>
+                            <button onclick="sendPreset('What is the promo code?')" class="text-[10px] bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 px-2 py-1 rounded-full border border-indigo-500/20 transition-colors">Promo code?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="typing-indicator" class="hidden px-4 py-2 flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                    <i data-lucide="bot" class="w-3 h-3 text-indigo-300"></i>
+                </div>
+                <div class="bg-white/5 rounded-full px-3 py-2 flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-white/40 rounded-full typing-dot"></div>
+                    <div class="w-1.5 h-1.5 bg-white/40 rounded-full typing-dot"></div>
+                    <div class="w-1.5 h-1.5 bg-white/40 rounded-full typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-[#0f172a] border-t border-white/5 z-10">
+                <form id="ai-form" onsubmit="handleAiSubmit(event)" class="relative">
+                    <input id="ai-input" type="text" placeholder="Ask about deposits, odds, or help..." class="w-full bg-white/5 border border-white/10 rounded-xl pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 transition-colors">
+                    <button type="submit" class="absolute right-2 top-2 p-1.5 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed" id="ai-send-btn">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bank" class="modal fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4">
+        <div class="modal-content glass-panel bg-[#020617] border-slate-800 w-full max-w-sm rounded-t-3xl sm:rounded-3xl h-[85vh] sm:h-[80vh] flex flex-col shadow-2xl">
+            <div class="p-6 border-b border-white/5 flex justify-between items-center sticky top-0 bg-[#020617]/95 backdrop-blur z-10 rounded-t-3xl">
+                <div>
+                    <h2 class="text-lg font-bold">Select Bank</h2>
+                    <p class="text-xs text-white/40">Tap copy icon to save number</p>
+                </div>
+                <button onclick="closeModal('modal-bank')" class="p-2 -mr-2 text-white/40 hover:text-white transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div class="p-4 overflow-y-auto custom-scrollbar space-y-3 pb-10" id="bank-list">
+                <div class="glass-panel p-4 rounded-xl flex items-center justify-between">
+                    <div>
+                        <p class="font-bold text-blue-400">Sampath Bank</p>
+                        <p class="text-sm">1001 2345 6789</p>
+                        <p class="text-xs text-white/50">K. Perera</p>
+                    </div>
+                    <button onclick="copyText('100123456789')" class="p-2 bg-white/5 rounded-lg hover:bg-white/10"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-withdraw" class="modal fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4">
+        <div class="modal-content glass-panel bg-[#020617] border-slate-800 w-full max-w-sm rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl">
+            <div class="p-5 border-b border-white/5 flex justify-between items-center bg-[#020617]">
+                <h2 
